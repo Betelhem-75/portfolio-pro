@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Betelhem Huluka</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "kGK5i7khQu0W_GfCm",
+      });
+   })();
+</script>
+</head>
+<body>
+    <section id="landing-page">
+        <nav>
+            <figure>
+                <img src="./assets/logo.svg" alt="" class="personal-logo">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link">
+                    <a href="#" class="nav__link--anchor link__hover--effect link__hover--effect--black">About</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#" class="nav__link--anchor link__hover--effect link__hover--effect--black">Projects</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="nav__link--anchor link__hover--effect link__hover--effect--black">Contact</a>
+                </li>
+                <li class="nav__link click" onclick="toggleContrast()">
+                    <a href="#" class="nav__link--anchor link__hover--effect link__hover--effect--black"><img src="./assets/circle-half-stroke-solid.svg" alt="" class="list-img"></a>
+                </li>
+            </ul>
+        </nav>
+        <header class="header">
+            <div class="header__content">
+                <h1 class="title">Hey</h1>
+                <h1 class="title orange">I'm Betelhem.</h1>
+                <p class="header__para">I'm a<b class="orange"> Frontend Software Engineer</b> with a strong passion for building web applications with great user experiences.
+                    <br>
+                    Here's a bit more <b class="orange click" onclick="taggleModal()"> about me.</b>
+                </p>
+                <div class="social__list">
+                    <a href="" class="social__link click" ><img src="./assets/github-brands-solid.svg" alt="" class="social"></a>
+                    <a href="" class="social__link click" ><img src="./assets/linkedin-in-brands-solid.svg" alt="" class="social"></a>
+                    <a href="./assets/David Bragg Resume.pdf" target="_blank" class="social__link click" ><img src="./assets/file-pdf-solid.svg" alt="" class="social"></a>
+                </div>
+            </div>
+        </header>
+        <button class="mail__btn click" onclick="toggleModal()">
+            <a href="" class=""> <img src="./assets/envelope-regular.svg" alt="" class="social click"></a>
+        </button>
+        <a href="#projects" class="scroll">
+            <div class="scroll__icon click"></div>
+       </a>
+       <div class="modal">
+          <div class="modal__half modal__about">
+             <h3 class="modal_title modal__title--about">Here's a dit about me.</h3>
+             <h4 class="modal__sub-title modal__sub-title--about">Frontend Software Engineer</h4>
+             <p class="modal__para">I'm a<b class="orange"> Frontend Software Engineer</b> with strong passion for developing website with great
+                <b class="orange"> user experiences.</b>
+                <br> I currently work on extremely difficult Engineering problemes and learn from a team consisting of the most<b class="orange"> talented</b> and<b class="orange"> exprienced</b> Software engineers every day. 
+             </p>
+             <div class="modal__languages">
+                 <figure class="modal__language" >
+                     <img  class="modal__language--img" src="./assets/html5-brands.svg " alt="">
+                     <span class="language__name">HTML</span>
+                 </figure>
+                 <figure class="modal__language">
+                    <img class="modal__language--img" src="./assets/html5-brands.svg " alt="">
+                    <span class="language__name">HTML</span>
+                 </figure>
+                 <figure class="modal__language">
+                    <img class="modal__language--img" src="./assets/html5-brands.svg " alt="">
+                    <span class="language__name">HTML</span>
+                 </figure>
+                 <figure class="modal__language">
+                    <img class="modal__language--img" src="./assets/html5-brands.svg " alt="">
+                    <span class="language__name">HTML</span>
+                 </figure>
+             </div>
+          </div>
+          <div class="modal__half modal__contact">
+              <img src="./assets/circle-xmark-solid.svg" class="modal__exit click" onclick="taggleModal()" alt="">
+              <h3 class="modal__title modal__title--contact">
+                let's have a chat!</h3>
+              <h3 class="modal__sub-title modal__sub-title--contact">
+               I'm currently open to new opportunities.</h3>
+              <form id="contact__form" onsubmit="contact(event)">
+                  <div class="form__item">
+                      <label class="form__item--label" for="Name" >Name</label>
+                      <input class="input" name="user_name" type="text" required></input>
+                  </div>
+                  <div class="form__item">
+                      <label class="form__item--label" for="Email" >Email</label>
+                      <input class="input" name="user_email" type="email" required></input>
+                  </div>
+                  <div class="form__item">
+                      <label class="form__item--label" for="Message" >Message</label>
+                      <textarea class="input" name="message" type="text" required></textarea>
+                  </div>
+                  <button id="contact__submit" class="form__submit">Send it my way</button>
+              </form>
+              <div class="modal__overlay modal__overlay--landing">
+                 <img src="./assets/spinner-solid.svg" class="modal__img" alt="">
+              </div>
+              <div class="modal__overlay modal__overlay--success">
+                 Thanks for message! Looking forward to speaking to you soon.
+              </div>
+          </div>
+       </div>
+    </section>
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">
+                    Here are some of my <span class="orange">projects</span>
+                </h1>
+                <ul class="project__list">
+                    <li class="project">
+                       <div class="project__wrapper">
+                          <img src="./assets/blinker mockup.png" class="project__img" alt="">
+                          <div class="project__wrapper--bg">
+                             <div class="project__describtion">
+                                  <h3 class="project__describtion--title">
+                                    car sales Projects</h3>
+                                  <h4 class="project__describtion--sub-title">
+                                    Html, CSS, JavaScript, Vue, Vuex</h4>
+                                  <p class="project__describtion--para">
+                                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                   Maiores, et ducimus eos dolor rerum accusantium dolorem 
+                                   minus repudiandae saepe libero dolore earum iure ipsum 
+                                   consequuntur provident commodi nihil voluptas dolores</p>
+                                  <div class="project__description--links">
+                                     <a href="#" class="project__description--link">
+                                        <img src="./assets/github-brands-solid.svg" alt="" class="social">
+                                     </a>
+                                     <a href="#" class="project__description--link">
+                                        <img src="./assets/linkedin-in-brands-solid.svg" alt="" class="social">
+                                     </a>
+                                  </div>
+                              </div>
+                          </div>
+                       </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <ul class="project__list">
+                    <li class="project">
+                       <div class="project__wrapper">
+                          <img src="./assets/blinker mockup.png" class="project__img" alt="">
+                          <div class="project__wrapper--bg">
+                             <div class="project__describtion">
+                                  <h3 class="project__describtion--title">
+                                    car sales Projects</h3>
+                                  <h4 class="project__describtion--sub-title">
+                                    Html, CSS, JavaScript, Vue, Vuex</h4>
+                                  <p class="project__describtion--para">
+                                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                   Maiores, et ducimus eos dolor rerum accusantium dolorem 
+                                   minus repudiandae saepe libero dolore earum iure ipsum 
+                                   consequuntur provident commodi nihil voluptas dolores</p>
+                                  <div class="project__description--links">
+                                     <a href="#" class="project__description--link">
+                                        <img src="./assets/github-brands-solid.svg" alt="" class="social">
+                                     </a>
+                                     <a href="#" class="project__description--link">
+                                        <img src="./assets/linkedin-in-brands-solid.svg" alt="" class="social">
+                                     </a>
+                                  </div>
+                              </div>
+                          </div>
+                       </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <ul class="project__list">
+                    <li class="project">
+                       <div class="project__wrapper">
+                          <img src="./assets/blinker mockup.png" class="project__img" alt="">
+                          <div class="project__wrapper--bg">
+                             <div class="project__describtion">
+                                  <h3 class="project__describtion--title">
+                                    car sales Projects</h3>
+                                  <h4 class="project__describtion--sub-title">
+                                    Html, CSS, JavaScript, Vue, Vuex</h4>
+                                  <p class="project__describtion--para">
+                                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                   Maiores, et ducimus eos dolor rerum accusantium dolorem 
+                                   minus repudiandae saepe libero dolore earum iure ipsum 
+                                   consequuntur provident commodi nihil voluptas dolores</p>
+                                  <div class="project__description--links">
+                                     <a href="#" class="project__description--link">
+                                        <img src="./assets/github-brands-solid.svg" alt="" class="social">
+                                     </a>
+                                     <a href="#" class="project__description--link">
+                                        <img src="./assets/linkedin-in-brands-solid.svg" alt="" class="social">
+                                     </a>
+                                  </div>
+                              </div>
+                          </div>
+                       </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+               <figure>
+                  <img src="./assets/logo.svg" class="footer__logo--img" alt="">
+               </figure>
+               <div class="footer__social--list">
+                   <a href="#" class="footer__social--link link__hover--effect
+                     link__hover-effect--white">Github
+                   </a>
+                   <a href="#" class="footer__social--link link__hover--effect
+                     link__hover-effect--white">LinkedIn
+                   </a>
+                   <a href="#" class="footer__social--link link__hover--effect
+                     link__hover-effect--white">Email
+                   </a>
+                   <a href="#" class="footer__social--link link__hover--effect
+                     link__hover-effect--white">Resume
+                   </a>
+               </div>
+               <div class="footer__copyright">Copyright<img src="./assets/copyright-regular.svg"
+                   class="social" alt=""> 2025 Betelhem Huluka
+               </div>
+           </div>
+      </div>
+    </footer>
+</body>
+</html>
