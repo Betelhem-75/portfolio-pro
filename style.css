@@ -7,6 +7,10 @@
     font-family: 'Roboto', 'sans-serif';
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 p{
     line-height: 1.5;
     font-size: 16px;
@@ -131,6 +135,40 @@ nav, .scroll, .header {
     visibility: hidden;
     transition: all 400ms ;
 }
+
+.dark-theme .title,
+.dark-theme .section__title,
+.dark-theme .section__sub-title,
+.dark-theme .nav__link--anchor,
+.dark-theme .list-img
+.dark-theme .header__para {
+    color: white;
+}
+
+.dark-theme section {
+    background-color: #242424;
+}
+.dark-theme .personal-logo{
+    filter: none;
+}
+
+.dark-theme .list-img,
+.dark-theme .header__para{
+    filter: invert();
+}
+
+.dark-theme .scroll__icon::after,
+.dark-theme .link__hover--effect--black:after{
+    background-color: white;
+}
+
+
+
+section {
+    background-color: rgb(245, 245, 245);
+    transition: all 300ms ease;
+}
+
 
 /*
 
@@ -545,4 +583,107 @@ footer{
 
 .footer__social--link, .footer__copyright{
     color: white;
+}
+
+/*
+
+     SHAPES
+
+*/
+
+.shape, .mail__btn {
+    position: fixed;
+}
+
+.shape__0{
+    top: 15vh;
+    left: 5vw;
+}
+
+.shape__1{
+    top: 15vh;
+    left: 50vw;
+}
+
+.shape__2{
+    top: 15vh;
+    left: 80vw;
+}
+
+.shape__3{
+    top: 50vh;
+    left: 5vw;
+}
+
+.shape__4{
+    top: 50vh;
+    left: 50vw;
+}
+
+.shape__5{
+    top: 50vh;
+    left: 80vw;
+}
+
+.shape__6{
+    top: 80vh;
+    left: 5vw;
+}
+
+.shape__7{
+    top: 80vh;
+    left: 50vw;
+}
+
+.shape__8{
+    top: 80vh;
+    left: 80vw;
+}
+
+@media (max-width: 768px) {
+    .title {
+       font-size: 50px;
+    }
+
+    .header__para {
+     font-size: 15px;
+    }
+    .modal {
+        top: 0;
+        left: 0;
+        transform: none;
+        height: auto;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    .modal__half {
+        width: 100%;
+    }
+}
+/* small phone*/
+@media (max-width: 480px) {
+    .title {
+        font-size: 30px;
+    }
+    .header__para{
+        font-size: 15px;
+    }
+    .nav__link:first-child {
+        display: none;
+    }
+    .project__describtion--para{
+        display: none;
+    }
+    .project__describtion {
+        left: 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .project__describtion--sub-title {
+        margin-bottom: 8px;
+    }
+    .modal__half {
+        padding: 40px;
+    }
 }

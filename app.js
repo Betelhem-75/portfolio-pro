@@ -3,6 +3,19 @@
 //
 let isModalOpen = false;
 let  contrastToggle = false;
+const scaleFactor = 1 / 20;
+
+function moveBackground(event) {
+  const shapes = document.querySelectorAll("shape");
+  const x = event.clientX * scaleFactor;
+  const y = event.clientY * scaleFactor;
+
+  for (let i = 0; i < shapes.length; i++) {
+    const isOdd = i % 2 !== 0;
+    const boolint = isOdd ? -1 : 1;
+    shapes[i].Style.transform = 'translate(${x * boolint}px, ${y * boolint}px)'
+  }
+}
 
 function toggleContrast() {
     contrastToggle = !contrastToggle;
@@ -10,7 +23,7 @@ function toggleContrast() {
         document.body.classList += " dark-theme"
     }
     else {
-        document.body.classList.remove("dark-them")
+        document.body.classList.remove("dark-theme")
     }
 }
 
